@@ -8,6 +8,8 @@ project(SnakeGame
 
 add_executable(app)
 
+target_include_directories(app PRIVATE ${PROJECT_SOURCE_DIR}/include)
+
 target_sources(app
     PUBLIC
         main.cpp
