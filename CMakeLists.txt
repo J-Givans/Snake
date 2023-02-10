@@ -8,7 +8,13 @@ project(SnakeGame
 
 add_executable(app)
 
-add_executable(app main.cpp)
+target_sources(app
+    PUBLIC
+        main.cpp
+    PRIVATE
+        "${PROJECT_SOURCE_DIR}/include/Fruit.hpp"
+        "${PROJECT_SOURCE_DIR}/src/Fruit.cpp"
+)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
