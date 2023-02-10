@@ -31,6 +31,13 @@ public:
      */
     Direction getDirection() && noexcept;
 
+    /**
+     * @brief Set the direction in which the snake is moving
+     * 
+     * @param direction The new direction
+     */
+    void setDirection(Direction const& direction) noexcept;
+
 private:
     std::vector<Snakelet> m_body {};
     Direction m_direction = Direction::None;

@@ -9,3 +9,8 @@ Direction Snake::getDirection() && noexcept
 {
     return std::move(m_direction);
 }
+
+void Snake::setDirection(Direction const& direction) noexcept
+{
+    m_direction = direction;
+}
