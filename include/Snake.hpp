@@ -10,6 +10,10 @@ enum class Direction { None, Up, Down, Left, Right };
 struct Snakelet
 {
     sf::Vector2f position {};
+
+    Snakelet(float x, float y) noexcept : position(x, y)
+    {
+    }
 };
 
 class Snake
@@ -37,6 +41,12 @@ public:
      * @param direction The new direction
      */
     void setDirection(Direction const& direction) noexcept;
+
+    /**
+     * @brief Grow the snake whenever it eats a fruit
+     * 
+     */
+    void grow() noexcept;
 
 private:
     std::vector<Snakelet> m_body {};
