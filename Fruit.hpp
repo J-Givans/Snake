@@ -1,6 +1,7 @@
 #ifndef FRUIT_HPP
 #define FRUIT_HPP
 
+#include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/System/Vector2.hpp>
 
 class Fruit
@@ -16,6 +17,7 @@ public:
 
 private:
     sf::Vector2i m_position {};
+    sf::CircleShape m_shape {};
 };
 
 #endif
