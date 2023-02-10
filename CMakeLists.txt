@@ -6,10 +6,7 @@ project(SnakeGame
     LANGUAGES CXX
 )
 
-if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-    set(CMAKE_CXX_STANDARD 17)
-    set(CMAKE_CXX_EXTENSIONS OFF)
-endif()
+add_executable(app)
 
 add_executable(app main.cpp)
 
