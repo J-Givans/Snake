@@ -18,6 +18,20 @@ class Snake
 public:
     Snake() noexcept = default;
 
+    /**
+     * @brief Get the direction which the head is facing
+     * 
+     * @return Direction const& The direction of the snake's head
+     */
+    Direction const& getDirection() const& noexcept;
+
+    /**
+     * @brief Get the direction which the head is facing
+     * 
+     * @return Direction The direction of the snake's head
+     */
+    Direction getDirection() && noexcept;
+
 private:
     std::vector<Snakelet> m_body {};
 };
