@@ -10,7 +10,6 @@ enum class Direction { None, Up, Down, Left, Right };
 struct Snakelet
 {
     sf::Vector2f position {};
-    Direction direction = Direction::None;
 };
 
 class Snake
@@ -34,6 +33,7 @@ public:
 
 private:
     std::vector<Snakelet> m_body {};
+    Direction m_direction = Direction::None;
 };
 
 #endif
