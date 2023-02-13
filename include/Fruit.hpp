@@ -4,6 +4,8 @@
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/System/Vector2.hpp>
 
+#include "Common.hpp"
+
 class Fruit
 {
 public:
@@ -45,7 +47,7 @@ public:
 
 private:
     sf::Vector2f m_position {};
-    sf::CircleShape m_shape {};
+    sf::CircleShape m_shape { static_cast<float>(BlockSize) / 2 };
 };
 
 #endif

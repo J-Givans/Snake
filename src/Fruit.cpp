@@ -1,6 +1,6 @@
 #include "Fruit.hpp"
 
-Fruit::Fruit(float x, float y) noexcept : m_position(x, y), m_shape(8)
+Fruit::Fruit(float x, float y) noexcept : m_position(x, y)
 {
     m_shape.setFillColor(sf::Color::Green);
     m_shape.setPosition(m_position);
