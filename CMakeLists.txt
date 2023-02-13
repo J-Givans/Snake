@@ -16,6 +16,7 @@ target_sources(app
     PRIVATE
         "${PROJECT_SOURCE_DIR}/include/Fruit.hpp"
         "${PROJECT_SOURCE_DIR}/src/Fruit.cpp"
+        "${PROJECT_SOURCE_DIR}/include/Common.hpp"
 )
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
