@@ -1,14 +1,14 @@
 #include "Fruit.hpp"
 
-Fruit::Fruit(float x, float y) noexcept : m_position(x, y)
+Fruit::Fruit(float x, float y) noexcept
 {
     m_shape.setFillColor(sf::Color::Green);
-    m_shape.setPosition(m_position);
+    m_shape.setPosition(x, y);
 }
 
 sf::Vector2f const& Fruit::getPosition() const& noexcept
 {
-    return m_position;
+    return m_shape.getPosition();
 }
 
 sf::Vector2f Fruit::getPosition() && noexcept

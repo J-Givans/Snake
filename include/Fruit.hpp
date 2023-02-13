@@ -46,7 +46,6 @@ public:
     sf::CircleShape getShape() && noexcept;
 
 private:
-    sf::Vector2f m_position {};
     sf::CircleShape m_shape { static_cast<float>(BlockSize) / 2 };
 };
 
