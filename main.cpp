@@ -3,9 +3,11 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Keyboard.hpp>
 
+#include "Common.hpp"
+
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(640, 480), "Snake");
+    sf::RenderWindow window(sf::VideoMode(Dimensions.width * BlockSize, Dimensions.height * BlockSize), "Snake");
     
     while (window.isOpen()) {
         sf::Event event;
