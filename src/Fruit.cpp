@@ -11,11 +11,6 @@ sf::Vector2f const& Fruit::getPosition() const& noexcept
     return m_shape.getPosition();
 }
 
-sf::Vector2f Fruit::getPosition() && noexcept
-{
-    return std::move(m_position);
-}
-
 sf::CircleShape const& Fruit::getShape() const& noexcept
 {
     return m_shape;

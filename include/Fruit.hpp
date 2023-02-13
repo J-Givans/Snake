@@ -25,13 +25,6 @@ public:
     sf::Vector2f const& getPosition() const& noexcept;
     
     /**
-     * @brief Get the position of the fruit
-     * 
-     * @return sf::Vector2i The position of the fruit as an rvalue
-     */
-    sf::Vector2f getPosition() && noexcept;
-
-    /**
      * @brief Get the shape representing the fruit
      * 
      * @return sf::CircleShape const& The shape as a const lvalue reference
