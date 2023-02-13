@@ -43,6 +43,12 @@ public:
     void setDirection(Direction const& direction) noexcept;
 
     /**
+     * @brief Set the direction based on the key pressed
+     * 
+     */
+    void setDirection() noexcept;
+
+    /**
      * @brief Grow the snake whenever it eats a fruit
      * 
      */

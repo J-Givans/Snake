@@ -1,4 +1,5 @@
 #include "Snake.hpp"
+#include <SFML/Window/Keyboard.hpp>
 
 Direction const& Snake::getDirection() const& noexcept
 {
@@ -13,6 +14,22 @@ Direction Snake::getDirection() && noexcept
 void Snake::setDirection(Direction const& direction) noexcept
 {
     m_direction = direction;
+}
+
+void Snake::setDirection() noexcept
+{
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+        setDirection(Direction::Up);
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+        setDirection(Direction::Down);
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+        setDirection(Direction::Left);
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+        setDirection(Direction::Right);
+    }
 }
 
 void Snake::grow() noexcept
