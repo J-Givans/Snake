@@ -1,6 +1,9 @@
 #ifndef SNAKE_HPP
 #define SNAKE_HPP
 
+#include "Common.hpp"
+
+#include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Vector2.hpp>
 
 #include <vector>
@@ -47,6 +50,7 @@ public:
 
 private:
     std::vector<sf::Vector2i> m_body;
+    sf::RectangleShape m_shape { { BlockSize, BlockSize } };
     Direction m_direction = Direction::None;
 
     /**
