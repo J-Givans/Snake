@@ -10,6 +10,12 @@ class Fruit
 {
 public:
     /**
+     * @brief Default constructor
+     * 
+     */
+    Fruit() noexcept;
+    
+    /**
      * @brief Construct a new Fruit object
      * 
      * @param x The fruit's position along the x-axis

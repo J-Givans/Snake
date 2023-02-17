@@ -1,6 +1,12 @@
 #include "Fruit.hpp"
 #include "Common.hpp"
 
+Fruit::Fruit() noexcept
+{
+    m_shape.setPosition(static_cast<float>(Dimensions.width) / 2, static_cast<float>(Dimensions.height) / 2);
+    m_shape.setFillColor(sf::Color::Red);
+}
+
 Fruit::Fruit(float const x, float const y) noexcept
 {
     m_shape.setFillColor(sf::Color::Green);
