@@ -5,6 +5,7 @@
 Snake::Snake() noexcept
 {
     m_body.emplace_back(0, 0);
+    m_shape.setFillColor(sf::Color::Green);
 }
 
 Direction const& Snake::getDirection() const& noexcept
