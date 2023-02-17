@@ -2,6 +2,11 @@
 #include <SFML/Window/Keyboard.hpp>
 #include <iterator>
 
+Snake::Snake() noexcept
+{
+    m_body.emplace_back(0, 0);
+}
+
 Direction const& Snake::getDirection() const& noexcept
 {
     return m_direction;

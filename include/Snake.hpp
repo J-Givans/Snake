@@ -11,7 +11,7 @@ enum class Direction { None, Up, Down, Left, Right };
 class Snake
 {
 public:
-    Snake() noexcept = default;
+    Snake() noexcept;
 
     /**
      * @brief Get the direction which the head is facing
@@ -46,7 +46,7 @@ public:
     void handleCollisionWithSelf() noexcept;
 
 private:
-    std::vector<sf::Vector2i> m_body {};
+    std::vector<sf::Vector2i> m_body;
     Direction m_direction = Direction::None;
 
     /**
