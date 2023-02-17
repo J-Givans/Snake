@@ -1,5 +1,6 @@
 #include "Snake.hpp"
 #include <SFML/Window/Keyboard.hpp>
+#include <iterator>
 
 Direction const& Snake::getDirection() const& noexcept
 {
@@ -47,5 +48,29 @@ void Snake::grow() noexcept
     }
     else if (m_direction == Direction::Right) {
         m_body.emplace_back(tail.x - 1, tail.y);
+    }
+}
+
+void Snake::handleCollisionWithSelf() noexcept
+{
+    if (m_body.size() < 5) {
+        return;
+    }
+
+    for (auto it = std::next(m_body.begin()); it != m_body.end(); ++it) {
+        if (*it == m_body.front()) {
+            auto rangeToCut = std::distance(it, m_body.end());
+            cut(rangeToCut);
+        }
+        else {
+            ++it;
+        }
+    }
+}
+
+void Snake::cut(std::ptrdiff_t const range) noexcept
+{
+    for (auto i = 0u; i < range; ++i) {
+        m_body.pop_back();
     }
 }

@@ -4,6 +4,7 @@
 #include <SFML/System/Vector2.hpp>
 
 #include <vector>
+#include <cstddef>
 
 enum class Direction { None, Up, Down, Left, Right };
 
@@ -38,6 +39,12 @@ public:
      */
     void grow() noexcept;
 
+    /**
+     * @brief What to do if the snake collides with itself
+     * 
+     */
+    void handleCollisionWithSelf() noexcept;
+
 private:
     std::vector<sf::Vector2i> m_body {};
     Direction m_direction = Direction::None;
@@ -48,6 +55,12 @@ private:
      * @param direction The new direction
      */
     void setDirection(Direction const& direction) noexcept;
+
+    /**
+     * @brief Trim the snake
+     * 
+     */
+    void cut(std::ptrdiff_t const range) noexcept;
 };
 
 #endif
