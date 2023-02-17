@@ -14,14 +14,6 @@ public:
      * 
      */
     Fruit() noexcept;
-    
-    /**
-     * @brief Construct a new Fruit object
-     * 
-     * @param x The fruit's position along the x-axis
-     * @param y The fruit's position along the y-axis
-     */
-    Fruit(float const x, float const y) noexcept;
 
     /**
      * @brief Get the position of the fruit

@@ -7,12 +7,6 @@ Fruit::Fruit() noexcept
     m_shape.setFillColor(sf::Color::Red);
 }
 
-Fruit::Fruit(float const x, float const y) noexcept
-{
-    m_shape.setFillColor(sf::Color::Green);
-    m_shape.setPosition(x * BlockSize, y * BlockSize);
-}
-
 sf::Vector2f const& Fruit::getPosition() const& noexcept
 {
     return m_shape.getPosition();
