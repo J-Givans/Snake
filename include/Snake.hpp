@@ -7,15 +7,6 @@
 
 enum class Direction { None, Up, Down, Left, Right };
 
-struct Snakelet
-{
-    sf::Vector2f position {};
-
-    Snakelet(float x, float y) noexcept : position(x, y)
-    {
-    }
-};
-
 class Snake
 {
 public:
@@ -48,7 +39,7 @@ public:
     void grow() noexcept;
 
 private:
-    std::vector<Snakelet> m_body {};
+    std::vector<sf::Vector2i> m_body {};
     Direction m_direction = Direction::None;
 
     /**

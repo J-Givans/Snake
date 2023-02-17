@@ -37,15 +37,15 @@ void Snake::grow() noexcept
     auto const& tail = m_body.back();
 
     if (m_direction == Direction::Up) {
-        m_body.emplace_back(tail.position.x, tail.position.y + 1);
+        m_body.emplace_back(tail.x, tail.y + 1);
     }
     else if (m_direction == Direction::Down) {
-        m_body.emplace_back(tail.position.x, tail.position.y - 1);
+        m_body.emplace_back(tail.x, tail.y - 1);
     }
     else if (m_direction == Direction::Left) {
-        m_body.emplace_back(tail.position.x + 1, tail.position.y);
+        m_body.emplace_back(tail.x + 1, tail.y);
     }
     else if (m_direction == Direction::Right) {
-        m_body.emplace_back(tail.position.x - 1, tail.position.y);
+        m_body.emplace_back(tail.x - 1, tail.y);
     }
 }
