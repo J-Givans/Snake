@@ -7,7 +7,7 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(Dimensions.width * BlockSize, Dimensions.height * BlockSize), "Snake");
+    sf::RenderWindow window(sf::VideoMode(Dimensions.width, Dimensions.height), "Snake");
     
     while (window.isOpen()) {
         sf::Event event;
