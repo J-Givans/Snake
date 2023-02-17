@@ -21,3 +21,13 @@ sf::CircleShape Fruit::getShape() && noexcept
 {
     return std::move(m_shape);
 }
+
+void Fruit::respawn() noexcept
+{
+    auto newPos = m_shape.getPosition();
+
+    newPos.x = Fruit::generator() % Dimensions.height;
+    newPos.y = Fruit::generator() % Dimensions.width;
+
+    m_shape.setPosition(newPos);
+}

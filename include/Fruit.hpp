@@ -6,6 +6,8 @@
 
 #include "Common.hpp"
 
+#include <random>
+
 class Fruit
 {
 public:
@@ -36,8 +38,17 @@ public:
      */
     sf::CircleShape getShape() && noexcept;
 
+    /**
+     * @brief Reposition the fruit elsewhere in the window
+     * 
+     */
+    void respawn() noexcept;
+
 private:
     sf::CircleShape m_shape { static_cast<float>(BlockSize) / 2 };
+
+    static inline std::random_device rd;
+    static inline std::mt19937 generator = std::mt19937(rd());
 };
 
 #endif
