@@ -9,8 +9,8 @@ static constexpr unsigned int BlockSize = 16;
 
 struct Vector2
 {
-    int width { 30 };
-    int height { 20 };
+    int width { 30 * BlockSize };
+    int height { 20 * BlockSize };
 };
 
 /**
