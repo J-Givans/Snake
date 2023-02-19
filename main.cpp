@@ -4,10 +4,14 @@
 #include <SFML/Window/Keyboard.hpp>
 
 #include "Common.hpp"
+#include "Snake.hpp"
+#include "Fruit.hpp"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(Dimensions.width, Dimensions.height), "Snake");
+    Snake snake;
+    Fruit fruit;
     
     while (window.isOpen()) {
         sf::Event event;
@@ -19,6 +23,8 @@ int main()
         }
 
         window.clear();
+        drawFruit(window, fruit);
+        drawSnake(window, snake);
         window.display();
     }
 
