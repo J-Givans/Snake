@@ -14,6 +14,7 @@ enum class Direction { None, Up, Down, Left, Right };
 
 class Snake
 {
+    friend class Window;
 public:
     Snake() noexcept;
 
