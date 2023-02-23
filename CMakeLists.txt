@@ -19,6 +19,10 @@ target_sources(app
         "${PROJECT_SOURCE_DIR}/src/Fruit.cpp"
         "${PROJECT_SOURCE_DIR}/include/Snake.hpp"
         "${PROJECT_SOURCE_DIR}/src/Snake.cpp"
+        "${PROJECT_SOURCE_DIR}/include/Window.hpp"
+        "${PROJECT_SOURCE_DIR}/src/Window.cpp"
+        "${PROJECT_SOURCE_DIR}/include/Game.hpp"
+        "${PROJECT_SOURCE_DIR}/src/Game.cpp"
 )
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
