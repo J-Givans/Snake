@@ -1,4 +1,5 @@
 #include "Snake.hpp"
+#include "Common.hpp"
 #include <SFML/Window/Keyboard.hpp>
 #include <iterator>
 
@@ -106,5 +107,32 @@ void Snake::move() noexcept
     }
     else if (m_direction == Direction::Right) {
         ++m_body.front().x;
+    }
+}
+
+void Snake::fitSnakeInGrid() noexcept
+{
+    auto& head = m_body.front();
+
+    // If the snake moves past the rightmost edge of the grid,
+    // respawn it at the leftmost edge of the grid.
+    if (head.x > Dimensions.width) {
+        head.x = 0;
+    }
+    // If the snake moves past the leftmost edge of the grid,
+    // respawn it at the rightmost edge of the grid.
+    else if (head.x < 0) {
+        head.x = Dimensions.width;
+    }
+
+    // If the snake moves past the bottommost edge of the grid,
+    // respawn it at the topmost edge of the grid.
+    if (head.y > Dimensions.height) {
+        head.y = 0;
+    }
+    // If the snake moves part the topmost edge of the grid,
+    // respawn it at the bottommost edge of the grid.
+    else if (head.y < 0) {
+        head.y = Dimensions.height;
     }
 }

@@ -30,8 +30,10 @@ int main()
 
         if (float timeStep = 1.0f / BlockSize; elapsedTime >= sf::seconds(timeStep)) {
             elapsedTime -= sf::seconds(timeStep);
-        snake.setDirection();
-        snake.move();
+            snake.setDirection();
+            snake.move();
+            snake.fitSnakeInGrid();
+        }
 
         window.clear();
         drawFruit(window, fruit);

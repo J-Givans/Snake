@@ -55,6 +55,12 @@ public:
      */
     void move() noexcept;
 
+    /**
+     * @brief Reposition the snake within the grid whenever it moves beyond the grid borders
+     * 
+     */
+    void fitSnakeInGrid() noexcept;
+
 private:
     std::vector<sf::Vector2i> m_body;
     sf::RectangleShape m_shape { { BlockSize, BlockSize } };
