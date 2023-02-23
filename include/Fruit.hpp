@@ -51,14 +51,6 @@ private:
 
     static inline std::random_device rd;
     static inline std::mt19937 generator = std::mt19937(rd());
-
-    /**
-     * @brief Draw the fruit to the render window
-     * 
-     * @param window Where the fruit is rendered to
-     * @param fruit The fruit to be rendered
-     */
-    friend void drawFruit(sf::RenderWindow& window, Fruit const& fruit);
 };
 
 #endif

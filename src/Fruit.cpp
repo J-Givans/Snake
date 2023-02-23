@@ -31,8 +31,3 @@ void Fruit::respawn() noexcept
 
     m_shape.setPosition(newPos);
 }
-
-void drawFruit(sf::RenderWindow& window, Fruit const& fruit)
-{
-    window.draw(fruit.m_shape);
-}
