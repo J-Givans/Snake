@@ -19,6 +19,8 @@ int main()
     sf::Clock clock;
     sf::Time elapsedTime;
 
+    static constexpr float timeStep = 1.0f / (BlockSize * 10); 
+
     while (window.isOpen()) {
         sf::Event event;
 
@@ -28,7 +30,7 @@ int main()
             }
         }
 
-        if (float timeStep = 1.0f / (BlockSize * 10); elapsedTime >= sf::seconds(timeStep)) {
+        if (elapsedTime >= sf::seconds(timeStep)) {
             snake.setDirection();
             snake.move();
             snake.fitSnakeInGrid();
