@@ -2,6 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Keyboard.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Sleep.hpp>
+#include <SFML/System/Time.hpp>
 
 #include "Common.hpp"
 #include "Snake.hpp"
@@ -13,6 +16,9 @@ int main()
     Snake snake;
     Fruit fruit;
     
+    sf::Clock clock;
+    sf::Time elapsedTime;
+
     while (window.isOpen()) {
         sf::Event event;
 
@@ -22,6 +28,8 @@ int main()
             }
         }
 
+        if (float timeStep = 1.0f / BlockSize; elapsedTime >= sf::seconds(timeStep)) {
+            elapsedTime -= sf::seconds(timeStep);
         snake.setDirection();
         snake.move();
 
@@ -29,6 +37,8 @@ int main()
         drawFruit(window, fruit);
         drawSnake(window, snake);
         window.display();
+
+        elapsedTime += clock.restart();
     }
 
     return EXIT_SUCCESS;
