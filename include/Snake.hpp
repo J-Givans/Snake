@@ -79,14 +79,6 @@ private:
      * 
      */
     void cut(std::ptrdiff_t const range) noexcept;
-
-    /**
-     * @brief Draw a snake to the render window
-     * 
-     * @param window Where the snake is rendered to
-     * @param snake The snake to be rendered
-     */
-    friend void drawSnake(sf::RenderWindow& window, Snake& snake);
 };
 
 #endif

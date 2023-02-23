@@ -82,14 +82,6 @@ void Snake::cut(std::ptrdiff_t const range) noexcept
     }
 }
 
-void drawSnake(sf::RenderWindow& window, Snake& snake)
-{
-    for (auto const& pos : snake.m_body) {
-        snake.m_shape.setPosition(pos.x, pos.y);
-        window.draw(snake.m_shape);
-    }
-}
-
 void Snake::move() noexcept
 {
     for (auto it = m_body.rbegin(); it != std::prev(m_body.rend()); ++it) {
