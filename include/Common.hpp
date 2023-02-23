@@ -17,6 +17,6 @@ struct Vector2
  * @brief The dimensions of the window to which the game will be rendered
  * 
  */
-static constexpr Vector2 Dimensions;
+inline constexpr Vector2 Dimensions;
 
 #endif
