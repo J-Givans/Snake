@@ -2,7 +2,7 @@
 
 void Game::run()
 {
-    static constexpr float timeStep = 1.0 / BlockSize * BlockSize;
+    static constexpr float timeStep = 1.0 / (BlockSize * BlockSize);
 
     while (m_window.isOpen()) {
         m_window.handleEvents();
