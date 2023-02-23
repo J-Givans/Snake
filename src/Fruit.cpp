@@ -7,9 +7,12 @@ Fruit::Fruit() noexcept
     m_shape.setFillColor(sf::Color::Red);
 }
 
-sf::Vector2f const& Fruit::getPosition() const& noexcept
+sf::Vector2i Fruit::getPosition() const& noexcept
 {
-    return m_shape.getPosition();
+    auto const& fruitPos = m_shape.getPosition();
+    auto pos = sf::Vector2i(static_cast<int>(fruitPos.x), static_cast<int>(fruitPos.y));
+
+    return pos;
 }
 
 sf::CircleShape const& Fruit::get() const& noexcept
