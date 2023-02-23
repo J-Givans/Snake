@@ -28,11 +28,11 @@ int main()
             }
         }
 
-        if (float timeStep = 1.0f / BlockSize; elapsedTime >= sf::seconds(timeStep)) {
-            elapsedTime -= sf::seconds(timeStep);
+        if (float timeStep = 1.0f / (BlockSize * 10); elapsedTime >= sf::seconds(timeStep)) {
             snake.setDirection();
             snake.move();
             snake.fitSnakeInGrid();
+            elapsedTime -= sf::seconds(timeStep);
         }
 
         window.clear();
