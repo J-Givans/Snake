@@ -30,14 +30,14 @@ public:
      * 
      * @return sf::CircleShape const& The shape as a const lvalue reference
      */
-    sf::CircleShape const& getShape() const& noexcept;
+    sf::CircleShape const& get() const& noexcept;
     
     /**
      * @brief Get the shape representing the fruit
      * 
      * @return sf::CircleShape The shape as an rvalue reference
      */
-    sf::CircleShape getShape() && noexcept;
+    sf::CircleShape get() && noexcept;
 
     /**
      * @brief Reposition the fruit elsewhere in the window

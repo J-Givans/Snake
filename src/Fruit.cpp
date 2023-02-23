@@ -12,12 +12,12 @@ sf::Vector2f const& Fruit::getPosition() const& noexcept
     return m_shape.getPosition();
 }
 
-sf::CircleShape const& Fruit::getShape() const& noexcept
+sf::CircleShape const& Fruit::get() const& noexcept
 {
     return m_shape;
 }
 
-sf::CircleShape Fruit::getShape() && noexcept
+sf::CircleShape Fruit::get() && noexcept
 {
     return std::move(m_shape);
 }
