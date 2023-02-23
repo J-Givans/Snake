@@ -62,6 +62,12 @@ public:
      */
     void fitSnakeInGrid() noexcept;
 
+    /**
+     * @brief Get the position of the head
+     * 
+     */
+    sf::Vector2i const& getHead() const& noexcept;
+
 private:
     std::vector<sf::Vector2i> m_body;
     sf::RectangleShape m_shape { { BlockSize, BlockSize } };

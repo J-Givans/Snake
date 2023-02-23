@@ -128,3 +128,8 @@ void Snake::fitSnakeInGrid() noexcept
         head.y = Dimensions.height;
     }
 }
+
+sf::Vector2i const& Snake::getHead() const& noexcept
+{
+    return m_body.front();
+}
