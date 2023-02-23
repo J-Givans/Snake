@@ -5,7 +5,7 @@
  * @brief The size of a single grid in the render window
  * 
  */
-static constexpr unsigned int BlockSize = 16;
+inline constexpr unsigned int BlockSize = 16;
 
 struct Vector2
 {
