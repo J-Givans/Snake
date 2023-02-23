@@ -25,16 +25,16 @@ void Snake::setDirection(Direction const& direction) noexcept
 
 void Snake::setDirection() noexcept
 {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) and m_direction != Direction::Down) {
         setDirection(Direction::Up);
     }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) and m_direction != Direction::Up) {
         setDirection(Direction::Down);
     }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) and m_direction != Direction::Right) {
         setDirection(Direction::Left);
     }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) and m_direction != Direction::Left) {
         setDirection(Direction::Right);
     }
 }
@@ -86,5 +86,25 @@ void drawSnake(sf::RenderWindow& window, Snake& snake)
     for (auto const& pos : snake.m_body) {
         snake.m_shape.setPosition(pos.x, pos.y);
         window.draw(snake.m_shape);
+    }
+}
+
+void Snake::move() noexcept
+{
+    for (auto it = m_body.rbegin(); it != std::prev(m_body.rend()); ++it) {
+        *it = *std::next(it);
+    }
+
+    if (m_direction == Direction::Up) {
+        --m_body.front().y;
+    }
+    else if (m_direction == Direction::Down) {
+        ++m_body.front().y;
+    }
+    else if (m_direction == Direction::Left) {
+        --m_body.front().x;
+    }
+    else if (m_direction == Direction::Right) {
+        ++m_body.front().x;
     }
 }

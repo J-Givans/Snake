@@ -49,6 +49,12 @@ public:
      */
     void handleCollisionWithSelf() noexcept;
 
+    /**
+     * @brief Move the snake within the game world
+     * 
+     */
+    void move() noexcept;
+
 private:
     std::vector<sf::Vector2i> m_body;
     sf::RectangleShape m_shape { { BlockSize, BlockSize } };

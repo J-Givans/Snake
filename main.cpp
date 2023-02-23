@@ -22,6 +22,9 @@ int main()
             }
         }
 
+        snake.setDirection();
+        snake.move();
+
         window.clear();
         drawFruit(window, fruit);
         drawSnake(window, snake);
