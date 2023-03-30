@@ -1,3 +1,4 @@
+#include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/Window.hpp>
 #include <SFML/Window/Event.hpp>
@@ -7,6 +8,7 @@
 
 #include <cstdlib>
 #include <random>
+#include <vector>
 
 inline constexpr unsigned int BlockSize = 16;
 
@@ -35,10 +37,27 @@ void respawn(Fruit& f, sf::Vector2u const& winSize)
     f.shape.setPosition(static_cast<float>(f.position.x * BlockSize), static_cast<float>(f.position.y * BlockSize));
 }
 
+struct Snake
+{
+    std::vector<sf::Vector2i> position;
+    sf::RectangleShape shape;
+
+    Snake()
+    {
+        shape.setFillColor(sf::Color::Green);
+        shape.setSize(sf::Vector2f(BlockSize, BlockSize));
+        
+        position.emplace_back(5, 5);
+        position.emplace_back(5, 6);
+        position.emplace_back(5, 7);
+    }
+};
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(600, 400), "Classic Game Of Snake");
     Fruit fruit;
+    Snake snake;
 
     while (window.isOpen()) {
         sf::Event event;
@@ -51,6 +70,12 @@ int main()
 
         window.clear();
         window.draw(fruit.shape);
+
+        for (auto const& s : snake.position) {
+            snake.shape.setPosition(static_cast<float>(s.x * BlockSize), static_cast<float>(s.y * BlockSize));
+            window.draw(snake.shape);
+        }
+
         window.display();
     }
 
