@@ -6,6 +6,7 @@
 #include <SFML/Graphics/CircleShape.hpp>
 
 #include <cstdlib>
+#include <random>
 
 inline constexpr unsigned int BlockSize = 16;
 
@@ -22,6 +23,17 @@ struct Fruit
         shape.setPosition(static_cast<float>(position.x * BlockSize), static_cast<float>(position.y * BlockSize));
     }
 };
+
+void respawn(Fruit& f, sf::Vector2u const& winSize)
+{
+    static std::random_device rd;
+    static std::mt19937 generator(rd());
+
+    f.position.x = generator() % (winSize.x / BlockSize);
+    f.position.y = generator() % (winSize.y / BlockSize);
+
+    f.shape.setPosition(static_cast<float>(f.position.x * BlockSize), static_cast<float>(f.position.y * BlockSize));
+}
 
 int main()
 {
