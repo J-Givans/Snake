@@ -3,3 +3,9 @@ build
 
 # Ignore the CMake presets file
 CMakeUserPresets.json
+
+# Ignore the .cache directory
+.cache
+
+# Ignore the .vscode directory
+.vscode
