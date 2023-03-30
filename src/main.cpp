@@ -5,6 +5,7 @@
 
 #include <cstdlib>
 
+inline constexpr unsigned int BlockSize = 16;
 
 int main()
 {
