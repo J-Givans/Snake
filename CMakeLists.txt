@@ -13,8 +13,8 @@ if (CCACHE)
     set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE}")
 endif()
 
-find_package(SFML REQUIRED 
-    COMPONENTS 
+find_package(SFML 2.5.1 REQUIRED
+    COMPONENTS
         sfml-system
         sfml-window
         sfml-graphics
