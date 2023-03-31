@@ -71,8 +71,6 @@ struct Snake
             direction = Direction::Right;
         }
 
-        // setupMovementInvariant();
-
         if (direction == Direction::Up) {
             for (auto& pos : position) {
                 pos.y -= 1; 
@@ -92,16 +90,6 @@ struct Snake
             for(auto& pos : position) {
                 pos.x += 1;
             }
-        }
-    }
-
-private:
-    [[deprecated("Unintuitive")]]
-    void setupMovementInvariant() & noexcept
-    {
-        for (auto it = position.rbegin(); it != std::prev(position.rend()); ++it) {
-            it->x = (it - 1)->x;
-            it->y = (it - 1)->y;
         }
     }
 };
