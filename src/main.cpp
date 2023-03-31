@@ -106,6 +106,8 @@ int main()
     Fruit fruit;
     Snake snake;
 
+    window.setFramerateLimit(BlockSize);
+
     while (window.isOpen()) {
         sf::Event event;
         
