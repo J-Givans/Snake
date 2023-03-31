@@ -1,4 +1,5 @@
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/Window.hpp>
 #include <SFML/Window/Event.hpp>
@@ -53,6 +54,22 @@ struct Snake
         position.emplace_back(5, 5);
         position.emplace_back(5, 6);
         position.emplace_back(5, 7);
+    }
+
+    void move() &
+    {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) and direction != Direction::Down) {
+            direction = Direction::Up;
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) and direction != Direction::Up) {
+            direction = Direction::Down;
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) and direction != Direction::Right) {
+            direction = Direction::Left;
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) and direction != Direction::Right) {
+            direction = Direction::Right;
+        }
     }
 };
 
