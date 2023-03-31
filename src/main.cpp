@@ -70,6 +70,21 @@ struct Snake
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) and direction != Direction::Right) {
             direction = Direction::Right;
         }
+
+        setupMovementInvariant();
+
+        if (auto& head = position.front(); direction == Direction::Up) {
+            head.y -= 1;
+        }
+        else if (direction == Direction::Down) {
+            head.y += 1;
+        }
+        else if (direction == Direction::Left) {
+            head.x -= 1;
+        }
+        else if (direction == Direction::Right) {
+            head.x += 1;
+        }
     }
 
 private:
@@ -95,6 +110,8 @@ int main()
                 window.close();
             }
         }
+
+        snake.move();
 
         window.clear();
         window.draw(fruit.shape);
