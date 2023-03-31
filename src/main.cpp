@@ -52,8 +52,8 @@ struct Snake
         shape.setSize(sf::Vector2f(BlockSize, BlockSize));
         
         position.emplace_back(5, 5);
-        position.emplace_back(5, 6);
-        position.emplace_back(5, 7);
+        position.emplace_back(6, 5);
+        position.emplace_back(7, 5);
     }
 
     void move() &
@@ -69,6 +69,14 @@ struct Snake
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) and direction != Direction::Right) {
             direction = Direction::Right;
+        }
+    }
+
+private:
+    void setupMovementInvariant() & noexcept
+    {
+        for (auto it = position.rbegin(); it != std::prev(position.rend()); ++it) {
+            *it = *std::prev(it);
         }
     }
 };
