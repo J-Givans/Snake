@@ -58,18 +58,7 @@ struct Snake
 
     void move() &
     {
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) and direction != Direction::Down) {
-            direction = Direction::Up;
-        }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) and direction != Direction::Up) {
-            direction = Direction::Down;
-        }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) and direction != Direction::Right) {
-            direction = Direction::Left;
-        }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) and direction != Direction::Right) {
-            direction = Direction::Right;
-        }
+        setDirection();
 
         if (direction == Direction::Up) {
             for (auto& pos : position) {
@@ -90,6 +79,23 @@ struct Snake
             for(auto& pos : position) {
                 pos.x += 1;
             }
+        }
+    }
+
+private:
+    void setDirection() & noexcept
+    {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) and direction != Direction::Down) {
+            direction = Direction::Up;
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) and direction != Direction::Up) {
+            direction = Direction::Down;
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) and direction != Direction::Right) {
+            direction = Direction::Left;
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) and direction != Direction::Right) {
+            direction = Direction::Right;
         }
     }
 };
