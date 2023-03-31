@@ -71,27 +71,37 @@ struct Snake
             direction = Direction::Right;
         }
 
-        setupMovementInvariant();
+        // setupMovementInvariant();
 
-        if (auto& head = position.front(); direction == Direction::Up) {
-            head.y -= 1;
+        if (direction == Direction::Up) {
+            for (auto& pos : position) {
+                pos.y -= 1; 
+            }
         }
         else if (direction == Direction::Down) {
-            head.y += 1;
+            for (auto& pos : position) {
+                pos.y += 1;
+            }
         }
         else if (direction == Direction::Left) {
-            head.x -= 1;
+            for (auto& pos : position) {
+                pos.x -= 1;
+            }
         }
         else if (direction == Direction::Right) {
-            head.x += 1;
+            for(auto& pos : position) {
+                pos.x += 1;
+            }
         }
     }
 
 private:
+    [[deprecated("Unintuitive")]]
     void setupMovementInvariant() & noexcept
     {
         for (auto it = position.rbegin(); it != std::prev(position.rend()); ++it) {
-            *it = *std::prev(it);
+            it->x = (it - 1)->x;
+            it->y = (it - 1)->y;
         }
     }
 };
