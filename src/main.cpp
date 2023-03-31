@@ -37,10 +37,13 @@ void respawn(Fruit& f, sf::Vector2u const& winSize)
     f.shape.setPosition(static_cast<float>(f.position.x * BlockSize), static_cast<float>(f.position.y * BlockSize));
 }
 
+enum class Direction { None, Up, Down, Left, Right };
+
 struct Snake
 {
     std::vector<sf::Vector2i> position;
     sf::RectangleShape shape;
+    Direction direction { Direction::None };
 
     Snake()
     {
