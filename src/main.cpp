@@ -7,6 +7,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
 
+#include <cstddef>
 #include <cstdlib>
 #include <random>
 #include <vector>
@@ -60,25 +61,22 @@ struct Snake
     {
         setDirection();
 
-        if (direction == Direction::Up) {
-            for (auto& pos : position) {
-                pos.y -= 1; 
-            }
+        for (std::size_t i = position.size() - 1; i > 0; --i) {
+            position[i].x = position[i - 1].x;
+            position[i].y = position[i - 1].y;
+        }
+
+        if (auto& head = position.front(); direction == Direction::Up) {
+            --head.y;
         }
         else if (direction == Direction::Down) {
-            for (auto& pos : position) {
-                pos.y += 1;
-            }
+            ++head.y;
         }
         else if (direction == Direction::Left) {
-            for (auto& pos : position) {
-                pos.x -= 1;
-            }
+            --head.x;
         }
         else if (direction == Direction::Right) {
-            for(auto& pos : position) {
-                pos.x += 1;
-            }
+            ++head.x;
         }
     }
 
