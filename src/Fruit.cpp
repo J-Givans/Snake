@@ -5,7 +5,7 @@
 
 namespace snake::fruit
 {
-    Fruit::Fruit(sf::Vector2u const& winsize)
+    Fruit::Fruit(sf::Vector2u const& winsize) : m_winsize { winsize }
     {
         static std::uniform_int_distribution<> dist(winsize.x % BlockSize, winsize.y % BlockSize);
         m_position.x = dist(generator);

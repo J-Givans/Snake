@@ -32,6 +32,7 @@ namespace snake::fruit
     private:
         sf::Vector2i m_position;
         sf::CircleShape m_shape;
+        sf::Vector2u m_winsize;
     };
 }
 
