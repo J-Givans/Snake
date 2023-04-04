@@ -27,6 +27,11 @@ struct Fruit
         shape.setFillColor(sf::Color::Red);
         shape.setPosition(static_cast<float>(position.x * BlockSize), static_cast<float>(position.y * BlockSize));
     }
+
+    void render(sf::RenderWindow& window) const&
+    {
+        window.draw(shape);
+    }
 };
 
 void respawn(Fruit& f, sf::Vector2u const& winSize)
@@ -222,7 +227,7 @@ int main()
         snake.handleSelfCollision();
 
         window.clear();
-        window.draw(fruit.shape);
+        fruit.render(window);
 
         for (auto const& s : snake.position) {
             snake.shape.setPosition(static_cast<float>(s.x * BlockSize), static_cast<float>(s.y * BlockSize));
