@@ -7,6 +7,8 @@ target_sources(snake
         Common.cpp
         Fruit.hpp
         Fruit.cpp
+        Borders.hpp
+        Borders.cpp
 )
 
 target_link_libraries(snake
