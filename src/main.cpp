@@ -132,7 +132,7 @@ enum class Status { Alive, Dead };
 struct PlayerData
 {
     int score {};
-    Status status { Status::Alive };
+    Status status { Status::Dead };
 };
 
 int main()
