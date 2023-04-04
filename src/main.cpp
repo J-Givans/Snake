@@ -111,6 +111,14 @@ private:
     }
 };
 
+enum class Status { Alive, Dead };
+
+struct PlayerData
+{
+    int score {};
+    Status status { Status::Alive };
+};
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(600, 400), "Classic Game Of Snake");
