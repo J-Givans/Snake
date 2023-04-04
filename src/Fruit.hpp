@@ -2,6 +2,7 @@
 #define FRUIT_HPP
 
 #include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
 
 #include "Common.hpp"
@@ -22,6 +23,10 @@ namespace snake::fruit
         /// \brief Default constructor
         /// \param[in] winsize The size of the window in which the Fruit will be rendered
         explicit Fruit(sf::Vector2u const& winsize);
+
+        /// \brief Render the fruit to the window
+        /// \param[in] window The window to which the Fruit will be rendered
+        void render(sf::RenderWindow& window);
     };
 }
 

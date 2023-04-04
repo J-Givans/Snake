@@ -16,4 +16,9 @@ namespace snake::fruit
         shape.setFillColor(sf::Color::Yellow);
         shape.setPosition(sf::Vector2f(position));
     }
+
+    void Fruit::render(sf::RenderWindow& window)
+    {
+        window.draw(shape);
+    }
 }
