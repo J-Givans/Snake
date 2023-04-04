@@ -26,7 +26,7 @@ namespace snake::fruit
 
         /// \brief Render the fruit to the window
         /// \param[in] window The window to which the Fruit will be rendered
-        void render(sf::RenderWindow& window);
+        void render(sf::RenderWindow& window) const;
     };
 }
 

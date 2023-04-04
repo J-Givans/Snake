@@ -17,7 +17,7 @@ namespace snake::fruit
         shape.setPosition(sf::Vector2f(position));
     }
 
-    void Fruit::render(sf::RenderWindow& window)
+    void Fruit::render(sf::RenderWindow& window) const
     {
         window.draw(shape);
     }
