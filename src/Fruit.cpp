@@ -8,22 +8,22 @@ namespace snake::fruit
     Fruit::Fruit(sf::Vector2u const& winsize)
     {
         static std::uniform_int_distribution<> dist(winsize.x % BlockSize, winsize.y % BlockSize);
-        position.x = dist(generator);
-        position.y = dist(generator);
+        m_position.x = dist(generator);
+        m_position.y = dist(generator);
 
         auto const radius = BlockSize / 2;
-        shape.setRadius(radius);
-        shape.setFillColor(sf::Color::Yellow);
-        shape.setPosition(sf::Vector2f(position * BlockSize));
+        m_shape.setRadius(radius);
+        m_shape.setFillColor(sf::Color::Yellow);
+        m_shape.setPosition(sf::Vector2f(m_position * BlockSize));
     }
 
     void Fruit::render(sf::RenderWindow& window) const
     {
-        window.draw(shape);
+        window.draw(m_shape);
     }
 
     sf::Vector2i const& Fruit::getPosition() const noexcept
     {
-        return position;
+        return m_position;
     }
 }

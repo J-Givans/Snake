@@ -30,8 +30,8 @@ namespace snake::fruit
         sf::Vector2i const& getPosition() const noexcept;
 
     private:
-        sf::Vector2i position;
-        sf::CircleShape shape;
+        sf::Vector2i m_position;
+        sf::CircleShape m_shape;
     };
 }
 
