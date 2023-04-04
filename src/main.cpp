@@ -120,6 +120,14 @@ struct Snake
         }
     }
 
+    void render(sf::RenderWindow& window) &
+    {
+        for (auto const& s : position) {
+            shape.setPosition(static_cast<float>(s.x * BlockSize), static_cast<float>(s.y * BlockSize));
+            window.draw(shape);
+        }
+    }
+
 private:
     void setDirection() & noexcept
     {
@@ -227,13 +235,9 @@ int main()
         snake.handleSelfCollision();
 
         window.clear();
+        
         fruit.render(window);
-
-        for (auto const& s : snake.position) {
-            snake.shape.setPosition(static_cast<float>(s.x * BlockSize), static_cast<float>(s.y * BlockSize));
-            window.draw(snake.shape);
-        }
-
+        snake.render(window);
         borders.render(window);
 
         window.display();
