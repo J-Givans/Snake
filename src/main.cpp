@@ -49,12 +49,7 @@ struct Snake
 
     Snake()
     {
-        shape.setFillColor(sf::Color::Green);
-        shape.setSize(sf::Vector2f(BlockSize, BlockSize));
-        
-        position.emplace_back(5, 5);
-        position.emplace_back(6, 5);
-        position.emplace_back(7, 5);
+        init();
     }
 
     void move() &
@@ -80,6 +75,14 @@ struct Snake
         }
     }
 
+    void reset() &
+    {
+        position.clear();
+
+        direction = Direction::None;
+        init();
+    }
+
 private:
     void setDirection() & noexcept
     {
@@ -95,6 +98,16 @@ private:
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) and direction != Direction::Right) {
             direction = Direction::Right;
         }
+    }
+
+    void init() &
+    {
+        shape.setFillColor(sf::Color::Green);
+        shape.setSize(sf::Vector2f(BlockSize, BlockSize));
+
+        position.emplace_back(5, 5);
+        position.emplace_back(6, 5);
+        position.emplace_back(7, 5);
     }
 };
 
