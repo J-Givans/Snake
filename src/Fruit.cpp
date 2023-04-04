@@ -23,9 +23,8 @@ namespace snake::fruit
 
     void Fruit::respawn()
     {
-        static std::uniform_int_distribution<> dist(m_winsize.x % BlockSize, m_winsize.y % BlockSize);
-        m_position.x = dist(generator);
-        m_position.y = dist(generator);
+        m_position.x = generator() % (m_winsize.x / BlockSize);
+        m_position.y = generator() % (m_winsize.y / BlockSize);
 
         m_shape.setPosition(sf::Vector2f(m_position * BlockSize));
     }
