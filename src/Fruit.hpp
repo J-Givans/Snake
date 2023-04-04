@@ -34,7 +34,7 @@ namespace snake::fruit
 
     private:
         sf::Vector2i m_position;
-        sf::CircleShape m_shape;
+        sf::CircleShape m_shape { static_cast<float>(BlockSize) / 2 };
         sf::Vector2u m_winsize;
     };
 }
