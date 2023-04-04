@@ -13,7 +13,7 @@
 #include <vector>
 #include <array>
 
-inline constexpr unsigned int BlockSize = 16;
+#include "Common.hpp"
 
 struct Fruit
 {
@@ -22,10 +22,10 @@ struct Fruit
 
     Fruit()
     {
-        auto const r = BlockSize / 2;
+        auto const r = snake::BlockSize / 2;
         shape.setRadius(static_cast<float>(r));
         shape.setFillColor(sf::Color::Yellow);
-        shape.setPosition(static_cast<float>(position.x * BlockSize), static_cast<float>(position.y * BlockSize));
+        shape.setPosition(static_cast<float>(position.x * snake::BlockSize), static_cast<float>(position.y * snake::BlockSize));
     }
 
     void render(sf::RenderWindow& window) const&
@@ -39,10 +39,10 @@ void respawn(Fruit& f, sf::Vector2u const& winSize)
     static std::random_device rd;
     static std::mt19937 generator(rd());
 
-    f.position.x = generator() % (winSize.x / BlockSize);
-    f.position.y = generator() % (winSize.y / BlockSize);
+    f.position.x = generator() % (winSize.x / snake::BlockSize);
+    f.position.y = generator() % (winSize.y / snake::BlockSize);
 
-    f.shape.setPosition(static_cast<float>(f.position.x * BlockSize), static_cast<float>(f.position.y * BlockSize));
+    f.shape.setPosition(static_cast<float>(f.position.x * snake::BlockSize), static_cast<float>(f.position.y * snake::BlockSize));
 }
 
 enum class Direction { None, Up, Down, Left, Right };
@@ -123,7 +123,7 @@ struct Snake
     void render(sf::RenderWindow& window) &
     {
         for (auto const& s : position) {
-            shape.setPosition(static_cast<float>(s.x * BlockSize), static_cast<float>(s.y * BlockSize));
+            shape.setPosition(static_cast<float>(s.x * snake::BlockSize), static_cast<float>(s.y * snake::BlockSize));
             window.draw(shape);
         }
     }
@@ -148,7 +148,7 @@ private:
     void init() &
     {
         shape.setFillColor(sf::Color::Green);
-        shape.setSize(sf::Vector2f(BlockSize, BlockSize));
+        shape.setSize(sf::Vector2f(snake::BlockSize, snake::BlockSize));
 
         position.emplace_back(5, 5);
         position.emplace_back(6, 5);
@@ -181,10 +181,10 @@ struct Borders
             boundary[i].setFillColor(sf::Color(150, 0, 0));
 
             if ((i + 1) % 2 != 0) {
-                boundary[i].setSize(sf::Vector2f(static_cast<float>(winSize.x), BlockSize));
+                boundary[i].setSize(sf::Vector2f(static_cast<float>(winSize.x), snake::BlockSize));
             }
             else {
-                boundary[i].setSize(sf::Vector2f(BlockSize, static_cast<float>(winSize.y)));
+                boundary[i].setSize(sf::Vector2f(snake::BlockSize, static_cast<float>(winSize.y)));
             }
 
             if (i < 2) {
@@ -213,7 +213,7 @@ int main()
     PlayerData data { .score = 10, .status = Status::Alive };
     Borders borders(window.getSize());
 
-    window.setFramerateLimit(BlockSize);
+    window.setFramerateLimit(snake::BlockSize);
 
     while (window.isOpen()) {
         sf::Event event;
