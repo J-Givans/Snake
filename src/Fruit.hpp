@@ -17,9 +17,6 @@ namespace snake::fruit
     class Fruit
     {
     public:
-        sf::Vector2i position;
-        sf::CircleShape shape;
-
         /// \brief Default constructor
         /// \param[in] winsize The size of the window in which the Fruit will be rendered
         explicit Fruit(sf::Vector2u const& winsize);
@@ -27,6 +24,10 @@ namespace snake::fruit
         /// \brief Render the fruit to the window
         /// \param[in] window The window to which the Fruit will be rendered
         void render(sf::RenderWindow& window) const;
+
+    private:
+        sf::Vector2i position;
+        sf::CircleShape shape;
     };
 }
 
