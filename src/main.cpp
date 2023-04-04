@@ -140,6 +140,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(600, 400), "Classic Game Of Snake");
     Fruit fruit;
     Snake snake;
+    PlayerData data { .score = 10, .status = Status::Alive };
 
     window.setFramerateLimit(BlockSize);
 
@@ -156,6 +157,7 @@ int main()
 
         if (snake.position.front() == fruit.position) {
             snake.grow();
+            data.score += 10;
             respawn(fruit, window.getSize());
         }
 
