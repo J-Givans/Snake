@@ -19,6 +19,8 @@ namespace snake::fruit
         sf::Vector2i position;
         sf::CircleShape shape;
 
+        /// \brief Default constructor
+        /// \param[in] winsize The size of the window in which the Fruit will be rendered
         explicit Fruit(sf::Vector2u const& winsize);
     };
 }
