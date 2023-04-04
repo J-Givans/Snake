@@ -83,6 +83,22 @@ struct Snake
         init();
     }
 
+    void grow() &
+    {
+        if (auto const& tail = position.back(); direction == Direction::Up) {
+            position.emplace_back(tail.x, tail.y + 1);
+        }
+        else if (direction == Direction::Down) {
+            position.emplace_back(tail.x, tail.y - 1);
+        }
+        else if (direction == Direction::Left) {
+            position.emplace_back(tail.x - 1, tail.y);
+        }
+        else if (direction == Direction::Right) {
+            position.emplace_back(tail.x + 1, tail.y);
+        }
+    }
+
 private:
     void setDirection() & noexcept
     {
@@ -137,6 +153,11 @@ int main()
         }
 
         snake.move();
+
+        if (snake.position.front() == fruit.position) {
+            snake.grow();
+            respawn(fruit, window.getSize());
+        }
 
         window.clear();
         window.draw(fruit.shape);
