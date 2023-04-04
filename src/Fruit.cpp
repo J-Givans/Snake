@@ -23,8 +23,8 @@ namespace snake::fruit
 
     void Fruit::respawn()
     {
-        m_position.x = generator() % (m_winsize.x / BlockSize);
-        m_position.y = generator() % (m_winsize.y / BlockSize);
+        m_position.x = (generator() % m_winsize.x) / BlockSize;
+        m_position.y = (generator() % m_winsize.y) / BlockSize;
 
         m_shape.setPosition(sf::Vector2f(m_position * BlockSize));
     }
