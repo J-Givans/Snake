@@ -5,7 +5,7 @@
 
 namespace snake::fruit
 {
-    Fruit::Fruit(sf::Vector2u const& winsize) : m_winsize { winsize }
+    Fruit::Fruit(sf::Vector2u const& winsize) : m_winsize { winsize.x - (2 * BlockSize), winsize.y - (2 * BlockSize) }
     {
         respawn();
         m_shape.setFillColor(sf::Color::Yellow);
