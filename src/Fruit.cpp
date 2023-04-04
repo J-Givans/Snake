@@ -14,7 +14,7 @@ namespace snake::fruit
         auto const radius = BlockSize / 2;
         shape.setRadius(radius);
         shape.setFillColor(sf::Color::Yellow);
-        shape.setPosition(sf::Vector2f(position));
+        shape.setPosition(sf::Vector2f(position * BlockSize));
     }
 
     void Fruit::render(sf::RenderWindow& window) const
