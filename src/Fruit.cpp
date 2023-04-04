@@ -21,4 +21,9 @@ namespace snake::fruit
     {
         window.draw(shape);
     }
+
+    sf::Vector2i const& Fruit::getPosition() const noexcept
+    {
+        return position;
+    }
 }

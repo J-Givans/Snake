@@ -25,6 +25,10 @@ namespace snake::fruit
         /// \param[in] window The window to which the Fruit will be rendered
         void render(sf::RenderWindow& window) const;
 
+        /// \brief Get the position of the fruit
+        /// \returns The position of the fruit
+        sf::Vector2i const& getPosition() const noexcept;
+
     private:
         sf::Vector2i position;
         sf::CircleShape shape;
