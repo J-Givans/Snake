@@ -24,7 +24,7 @@ struct Fruit
     {
         auto const r = BlockSize / 2;
         shape.setRadius(static_cast<float>(r));
-        shape.setFillColor(sf::Color::Red);
+        shape.setFillColor(sf::Color::Yellow);
         shape.setPosition(static_cast<float>(position.x * BlockSize), static_cast<float>(position.y * BlockSize));
     }
 
