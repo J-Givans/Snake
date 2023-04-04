@@ -29,6 +29,9 @@ namespace snake::fruit
         /// \returns The position of the fruit
         sf::Vector2i const& getPosition() const noexcept;
 
+        /// \brief Change the position of the fruit in the window
+        void respawn();
+
     private:
         sf::Vector2i m_position;
         sf::CircleShape m_shape;
