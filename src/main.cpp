@@ -99,6 +99,21 @@ struct Snake
         }
     }
 
+    void handleSelfCollision() &
+    {
+        if (position.size() < 5) {
+            return;
+        }
+
+        for (auto it = std::next(position.begin()); it != position.end(); ++it) {
+            if (*it == position.front()) {
+                auto const shrinkPoint = std::distance(it, position.end());
+                shrink(shrinkPoint);
+                break;
+            }
+        }
+    }
+
 private:
     void setDirection() & noexcept
     {
@@ -124,6 +139,13 @@ private:
         position.emplace_back(5, 5);
         position.emplace_back(6, 5);
         position.emplace_back(7, 5);
+    }
+
+    void shrink(std::ptrdiff_t point)
+    {
+        for (auto i = 0; i < point; ++i) {
+            position.pop_back();
+        }
     }
 };
 
@@ -160,6 +182,8 @@ int main()
             data.score += 10;
             respawn(fruit, window.getSize());
         }
+
+        snake.handleSelfCollision();
 
         window.clear();
         window.draw(fruit.shape);
