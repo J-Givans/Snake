@@ -5,6 +5,8 @@ target_sources(snake
     PRIVATE
         Common.hpp
         Common.cpp
+        Fruit.hpp
+        Fruit.cpp
 )
 
 target_link_libraries(snake
