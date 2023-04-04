@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <random>
 #include <vector>
+#include <array>
 
 inline constexpr unsigned int BlockSize = 16;
 
@@ -157,12 +158,47 @@ struct PlayerData
     Status status { Status::Dead };
 };
 
+struct Borders
+{
+    std::array<sf::RectangleShape, 4> boundary;
+
+    explicit Borders(sf::Vector2u const& winSize)
+    {
+        for (std::array<sf::RectangleShape, 4>::size_type i = 0; i < boundary.size(); ++i) {
+            boundary[i].setFillColor(sf::Color(150, 0, 0));
+
+            if ((i + 1) % 2 != 0) {
+                boundary[i].setSize(sf::Vector2f(static_cast<float>(winSize.x), BlockSize));
+            }
+            else {
+                boundary[i].setSize(sf::Vector2f(BlockSize, static_cast<float>(winSize.y)));
+            }
+
+            if (i < 2) {
+                boundary[i].setPosition(0, 0);
+            }
+            else {
+                boundary[i].setOrigin(boundary[i].getSize());
+                boundary[i].setPosition(sf::Vector2f(winSize));
+            }
+        }
+    }
+
+    void render(sf::RenderWindow& window) const
+    {
+        for (auto const& border : boundary) {
+            window.draw(border);
+        }
+    }
+};
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(600, 400), "Classic Game Of Snake");
     Fruit fruit;
     Snake snake;
     PlayerData data { .score = 10, .status = Status::Alive };
+    Borders borders(window.getSize());
 
     window.setFramerateLimit(BlockSize);
 
@@ -192,6 +228,8 @@ int main()
             snake.shape.setPosition(static_cast<float>(s.x * BlockSize), static_cast<float>(s.y * BlockSize));
             window.draw(snake.shape);
         }
+
+        borders.render(window);
 
         window.display();
     }
