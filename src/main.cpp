@@ -14,36 +14,7 @@
 #include <array>
 
 #include "Common.hpp"
-
-struct Fruit
-{
-    sf::Vector2i position;
-    sf::CircleShape shape;
-
-    Fruit()
-    {
-        auto const r = snake::BlockSize / 2;
-        shape.setRadius(static_cast<float>(r));
-        shape.setFillColor(sf::Color::Yellow);
-        shape.setPosition(static_cast<float>(position.x * snake::BlockSize), static_cast<float>(position.y * snake::BlockSize));
-    }
-
-    void render(sf::RenderWindow& window) const&
-    {
-        window.draw(shape);
-    }
-};
-
-void respawn(Fruit& f, sf::Vector2u const& winSize)
-{
-    static std::random_device rd;
-    static std::mt19937 generator(rd());
-
-    f.position.x = generator() % (winSize.x / snake::BlockSize);
-    f.position.y = generator() % (winSize.y / snake::BlockSize);
-
-    f.shape.setPosition(static_cast<float>(f.position.x * snake::BlockSize), static_cast<float>(f.position.y * snake::BlockSize));
-}
+#include "Fruit.hpp"
 
 enum class Direction { None, Up, Down, Left, Right };
 
@@ -208,7 +179,7 @@ struct Borders
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(600, 400), "Classic Game Of Snake");
-    Fruit fruit;
+    snake::fruit::Fruit fruit(window.getSize());
     Snake snake;
     PlayerData data { .score = 10, .status = Status::Alive };
     Borders borders(window.getSize());
@@ -226,10 +197,10 @@ int main()
 
         snake.move();
 
-        if (snake.position.front() == fruit.position) {
+        if (snake.position.front() == fruit.getPosition()) {
             snake.grow();
             data.score += 10;
-            respawn(fruit, window.getSize());
+            fruit.respawn();
         }
 
         snake.handleSelfCollision();
