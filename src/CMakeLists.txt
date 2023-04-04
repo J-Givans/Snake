@@ -1,6 +1,10 @@
 target_sources(snake
     PUBLIC
         main.cpp
+
+    PRIVATE
+        Common.hpp
+        Common.cpp
 )
 
 target_link_libraries(snake
