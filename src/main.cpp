@@ -5,13 +5,10 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
-#include <SFML/Graphics/CircleShape.hpp>
 
 #include <cstddef>
 #include <cstdlib>
-#include <random>
 #include <vector>
-#include <array>
 
 #include "Common.hpp"
 #include "Fruit.hpp"
