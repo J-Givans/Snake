@@ -32,7 +32,7 @@ namespace snake::snake
 
         /// \brief Set the direction of the snake
         /// \param[in] d The new direction
-        void setDirection(Direction d);
+        void setDirection(Direction d) noexcept;
 
         /// \brief Get the direction of the snake
         /// \return The direction of the snake

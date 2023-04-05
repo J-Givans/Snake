@@ -78,7 +78,7 @@ namespace snake::snake
         }
     }
 
-    void Snake::setDirection(Direction d)
+    void Snake::setDirection(Direction d) noexcept
     {
         direction = d;
     }
