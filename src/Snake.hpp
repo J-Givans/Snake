@@ -26,6 +26,9 @@ namespace snake::snake
         /// \brief Render the snake to the screen
         /// \param[in] window The window to which the snake will be rendered
         void render(sf::RenderWindow& window);
+
+        /// \brief Move the snake in the direction it is facing
+        void move();
     };
 }
 
