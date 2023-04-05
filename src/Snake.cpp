@@ -7,4 +7,12 @@ namespace snake::snake
     {
         shape.setFillColor(sf::Color::Green);
     }
+
+    void Snake::render(sf::RenderWindow& window)
+    {
+        for (auto const& pos : body) {
+            shape.setPosition(sf::Vector2f(posBlockSize));
+            window.draw(shape);
+        }
+    }
 }

@@ -22,6 +22,10 @@ namespace snake::snake
 
         /// \brief Default constructor
         Snake();
+
+        /// \brief Render the snake to the screen
+        /// \param[in] window The window to which the snake will be rendered
+        void render(sf::RenderWindow& window);
     };
 }
 
