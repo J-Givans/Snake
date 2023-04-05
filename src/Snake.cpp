@@ -77,4 +77,9 @@ namespace snake::snake
             }
         }
     }
+
+    void Snake::setDirection(Direction d)
+    {
+        direction = d;
+    }
 }

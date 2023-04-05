@@ -33,6 +33,10 @@ namespace snake::snake
         /// \brief Grow the snake
         /// \details Push a new segment onto the snake after it eats a fruit
         void grow();
+
+        /// \brief Set the direction of the snake
+        /// \param[in] d The new direction
+        void setDirection(Direction d);
     };
 }
 
