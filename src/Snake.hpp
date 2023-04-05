@@ -24,7 +24,7 @@ namespace snake::snake
         void render(sf::RenderWindow& window);
 
         /// \brief Move the snake in the direction it is facing
-        void move();
+        void move() noexcept;
 
         /// \brief Grow the snake
         /// \details Push a new segment onto the snake after it eats a fruit
