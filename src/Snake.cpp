@@ -103,7 +103,7 @@ namespace snake::snake
         }
     }
 
-    void Snake::shrink(std::ptrdiff_t segments)
+    void Snake::shrink(std::ptrdiff_t segments) noexcept
     {
         while (segments > 0) {
             body.pop_back();

@@ -47,7 +47,7 @@ namespace snake::snake
         sf::RectangleShape shape { sf::Vector2f(BlockSize - 1, BlockSize - 1) };
 
         /// \brief Shrink the snake whenever it eats itself
-        void shrink(std::ptrdiff_t segments);
+        void shrink(std::ptrdiff_t segments) noexcept;
     };
 }
 
