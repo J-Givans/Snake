@@ -16,10 +16,6 @@ namespace snake::snake
     class Snake
     {
     public:
-        std::vector<sf::Vector2i> body { {5, 5}, {6, 5}, {7, 5} };
-        Direction direction { Direction::None };
-        sf::RectangleShape shape { sf::Vector2f(BlockSize - 1, BlockSize - 1) };
-
         /// \brief Default constructor
         Snake();
 
@@ -42,6 +38,10 @@ namespace snake::snake
         void checkCollision();
 
     private:
+        std::vector<sf::Vector2i> body { {5, 5}, {6, 5}, {7, 5} };
+        Direction direction { Direction::None };
+        sf::RectangleShape shape { sf::Vector2f(BlockSize - 1, BlockSize - 1) };
+
         /// \brief Shrink the snake whenever it eats itself
         void shrink(std::ptrdiff_t segments);
     };
