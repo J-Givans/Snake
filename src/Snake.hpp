@@ -41,6 +41,10 @@ namespace snake::snake
         /// \brief Determine if the snake has collided with itself
         void checkCollision();
 
+        /// \brief Get the position of the snake
+        /// \retval sf::Vector2i The position of the head of the snake
+        sf::Vector2i const& getPosition() const noexcept;
+
     private:
         std::vector<sf::Vector2i> body { {5, 5}, {6, 5}, {7, 5} };
         Direction direction { Direction::None };

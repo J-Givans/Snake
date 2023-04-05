@@ -110,4 +110,9 @@ namespace snake::snake
             segments -= 1;
         }
     }
+
+    sf::Vector2i const& Snake::getPosition() const noexcept
+    {
+        return body.front();
+    }
 }
