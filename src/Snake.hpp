@@ -37,6 +37,13 @@ namespace snake::snake
         /// \brief Set the direction of the snake
         /// \param[in] d The new direction
         void setDirection(Direction d);
+
+        /// \brief Determine if the snake has collided with itself
+        void checkCollision();
+
+    private:
+        /// \brief Shrink the snake whenever it eats itself
+        void shrink(std::ptrdiff_t segments);
     };
 }
 

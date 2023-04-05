@@ -82,4 +82,27 @@ namespace snake::snake
     {
         direction = d;
     }
+
+    void Snake::checkCollision()
+    {
+        if (body.size() < 5) {
+            return;
+        }
+
+        for (auto it = std::next(body.cbegin()); it != body.cend(); ++it) {
+            if (*it == body.front()) {
+                auto const segments = std::distance(it, body.cend());
+                shrink(segments);
+                break;
+            }
+        }
+    }
+
+    void Snake::shrink(std::ptrdiff_t segments)
+    {
+        while (segments > 0) {
+            body.pop_back();
+            segments -= 1;
+        }
+    }
 }
