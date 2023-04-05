@@ -83,6 +83,11 @@ namespace snake::snake
         direction = d;
     }
 
+    Direction Snake::getDirection() const noexcept
+    {
+        return direction;
+    }
+
     void Snake::checkCollision()
     {
         if (body.size() < 5) {

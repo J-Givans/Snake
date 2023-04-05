@@ -34,6 +34,10 @@ namespace snake::snake
         /// \param[in] d The new direction
         void setDirection(Direction d);
 
+        /// \brief Get the direction of the snake
+        /// \return The direction of the snake
+        Direction getDirection() const noexcept;
+
         /// \brief Determine if the snake has collided with itself
         void checkCollision();
 
