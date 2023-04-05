@@ -5,7 +5,7 @@
 
 namespace snake::fruit
 {
-    Fruit::Fruit(sf::Vector2u const& winsize) : m_winsize { winsize.x - (2 * BlockSize), winsize.y - (2 * BlockSize) }
+    Fruit::Fruit(sf::Vector2u const& winsize) : m_winsize { (winsize.x / BlockSize) - 2, (winsize.y / BlockSize) - 2 }
     {
         respawn();
         m_shape.setFillColor(sf::Color::Yellow);
@@ -23,8 +23,8 @@ namespace snake::fruit
 
     void Fruit::respawn()
     {
-        m_position.x = (generator() % m_winsize.x) / BlockSize;
-        m_position.y = (generator() % m_winsize.y) / BlockSize;
+        m_position.x = (generator() % m_winsize.x) + 1;
+        m_position.y = (generator() % m_winsize.y) + 1;
 
         m_shape.setPosition(sf::Vector2f(m_position * BlockSize));
     }
