@@ -35,4 +35,46 @@ namespace snake::snake
             ++head.x;
         }
     }
+
+    void Snake::grow()
+    {
+        if (body.empty()) {
+            return;
+        }
+
+        if (auto& tail = body.back(); body.size() > 1) {
+            auto const& preTail = body[body.size() - 2];
+
+            if (tail.x == preTail.x) {
+                if (tail.y > preTail.y) {
+                    body.emplace_back(tail.x, tail.y + 1);
+                }
+                else {
+                    body.emplace_back(tail.x, tail.y - 1);
+                }
+            }
+            else if (tail.y == preTail.y) {
+                if (tail.x > preTail.x) {
+                    body.emplace_back(tail.x + 1, tail.y);
+                }
+                else {
+                    body.emplace_back(tail.x - 1, tail.y);
+                }
+            }
+            else {
+                if (direction == Direction::Up) {
+                    body.emplace_back(tail.x, tail.y + 1);
+                }
+                else if (direction == Direction::Down) {
+                    body.emplace_back(tail.x, tail.y - 1);
+                }
+                else if (direction == Direction::Left) {
+                    body.emplace_back(tail.x - 1, tail.y);
+                }
+                else if (direction == Direction::Right) {
+                    body.emplace_back(tail.x + 1, tail.y);
+                }
+            }
+        }
+    }
 }
