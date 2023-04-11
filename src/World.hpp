@@ -2,6 +2,7 @@
 #define WORLD_HPP
 
 #include "Borders.hpp"
+
 #include <SFML/System/Vector2.hpp>
 
 namespace snake::world
