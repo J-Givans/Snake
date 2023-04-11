@@ -14,9 +14,12 @@ namespace snake::world
     public:
         explicit World(sf::Vector2u const& winsize);
 
+        void update(snake::Snake& snake);
+
     private:
         Borders m_borders;
         fruit::Fruit m_fruit;
+        sf::Vector2u m_winsize;
     };
 }
 
