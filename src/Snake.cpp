@@ -115,4 +115,15 @@ namespace snake::snake
     {
         return body.front();
     }
+
+    void Snake::reset()
+    {
+        body.clear();
+
+        body.emplace_back(5, 5);
+        body.emplace_back(5, 6);
+        body.emplace_back(5, 7);
+
+        direction = Direction::None;
+    }
 }

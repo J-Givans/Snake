@@ -45,6 +45,9 @@ namespace snake::snake
         /// \retval sf::Vector2i The position of the head of the snake
         sf::Vector2i const& getPosition() const noexcept;
 
+        /// \brief Reset the snake to its initial state
+        void reset();
+
     private:
         std::vector<sf::Vector2i> body { {5, 5}, {6, 5}, {7, 5} };
         Direction direction { Direction::None };
