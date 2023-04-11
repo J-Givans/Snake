@@ -2,6 +2,7 @@
 #define WORLD_HPP
 
 #include "Borders.hpp"
+#include "Snake.hpp"
 
 #include <SFML/System/Vector2.hpp>
 
@@ -14,6 +15,10 @@ namespace snake::world
 
     private:
         Borders m_borders;
+        snake::Snake m_snake;
+
+        /// \brief Set the snake direction whenever an arrow-key is pressed
+        void setSnakeDirection();
     };
 }
 
