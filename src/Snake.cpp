@@ -126,4 +126,14 @@ namespace snake::snake
 
         direction = Direction::None;
     }
+
+    void Snake::tick()
+    {
+        if (body.empty() or direction == Direction::None) {
+            return;
+        }
+
+        move();
+        checkCollision();
+    }
 }

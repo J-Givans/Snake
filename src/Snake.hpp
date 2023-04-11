@@ -47,6 +47,9 @@ namespace snake::snake
 
         /// \brief Reset the snake to its initial state
         void reset();
+        
+        /// \brief Update the snake's state in a single tick of the clock
+        void tick();
 
     private:
         std::vector<sf::Vector2i> body { {5, 5}, {6, 5}, {7, 5} };
