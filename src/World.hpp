@@ -3,6 +3,7 @@
 
 #include "Borders.hpp"
 #include "Snake.hpp"
+#include "Fruit.hpp"
 
 #include <SFML/System/Vector2.hpp>
 
@@ -15,6 +16,7 @@ namespace snake::world
 
     private:
         Borders m_borders;
+        fruit::Fruit m_fruit;
     };
 }
 

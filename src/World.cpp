@@ -4,7 +4,7 @@
 
 namespace snake::world
 {
-    World::World(sf::Vector2u const& winsize) : m_borders(winsize)
+    World::World(sf::Vector2u const& winsize) : m_borders(winsize), m_fruit(winsize)
     {
     }
 }
