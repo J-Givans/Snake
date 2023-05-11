@@ -9,7 +9,7 @@ project(Snake
 find_program(CCACHE ccache)
 
 if (CCACHE)
-    message("Found ccache")
+    message("Setting ${CCACHE} as the compiler launcher...")
     set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE}")
 endif()
 
