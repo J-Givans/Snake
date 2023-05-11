@@ -3,13 +3,12 @@ target_include_directories(snake PUBLIC "${PROJECT_SOURCE_DIR}/include")
 target_sources(snake
     PUBLIC
         main.cpp
-
+        "${PROJECT_SOURCE_DIR}/include/Borders.hpp"
     PRIVATE
         Common.hpp
         Common.cpp
         Fruit.hpp
         Fruit.cpp
-        Borders.hpp
         Borders.cpp
         Snake.hpp
         Snake.cpp
