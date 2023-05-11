@@ -1,6 +1,20 @@
 add_executable(snake)
 
+find_package(SFML 2.5.1 REQUIRED
+    COMPONENTS
+        sfml-system
+        sfml-window
+        sfml-graphics
+)
+
 target_include_directories(snake PUBLIC "${PROJECT_SOURCE_DIR}/include")
+
+target_link_libraries(snake
+    PRIVATE
+        sfml-system
+        sfml-window
+        sfml-graphics
+)
 
 target_sources(snake
     PUBLIC
@@ -14,13 +28,6 @@ target_sources(snake
         Fruit.cpp
         Borders.cpp
         Snake.cpp
-)
-
-target_link_libraries(snake
-    PRIVATE
-        sfml-system
-        sfml-window
-        sfml-graphics
 )
 
 target_compile_features(snake 
