@@ -143,10 +143,10 @@ struct PlayerData
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(600, 400), "Classic Game Of Snake");
-    snake::fruit::Fruit fruit(window.getSize());
+    snake::Fruit fruit(window.getSize());
     Snake snake;
     PlayerData data { .score = 10, .status = Status::Alive };
-    snake::world::Borders borders(window.getSize());
+    snake::Borders borders(window.getSize());
 
     window.setFramerateLimit(snake::BlockSize);
 

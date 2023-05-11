@@ -1,7 +1,7 @@
 #include "Borders.hpp"
 #include "Common.hpp"
 
-namespace snake::world
+namespace snake
 {
     Borders::Borders(sf::Vector2u const& winSize)
     {

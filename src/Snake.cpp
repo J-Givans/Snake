@@ -1,7 +1,7 @@
 #include "Snake.hpp"
 #include "Common.hpp"
 
-namespace snake::snake
+namespace snake
 {
     Snake::Snake()
     {

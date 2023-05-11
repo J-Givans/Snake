@@ -7,7 +7,7 @@
 
 #include <SFML/System/Vector2.hpp>
 
-namespace snake::world
+namespace snake
 {
     class World
     {
@@ -18,7 +18,7 @@ namespace snake::world
 
     private:
         Borders m_borders;
-        fruit::Fruit m_fruit;
+        Fruit m_fruit;
         sf::Vector2u m_winsize;
     };
 }

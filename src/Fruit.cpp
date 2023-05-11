@@ -3,7 +3,7 @@
 
 #include <random>
 
-namespace snake::fruit
+namespace snake
 {
     Fruit::Fruit(sf::Vector2u const& winsize) : m_winsize { (winsize.x / BlockSize) - 2, (winsize.y / BlockSize) - 2 }
     {

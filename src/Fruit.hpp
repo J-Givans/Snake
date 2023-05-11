@@ -9,7 +9,7 @@
 
 #include <random>
 
-namespace snake::fruit
+namespace snake
 {
     inline std::random_device rd;
     inline std::mt19937 generator(rd());

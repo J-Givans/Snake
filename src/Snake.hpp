@@ -9,7 +9,7 @@
 #include <vector>
 
 
-namespace snake::snake
+namespace snake
 {
     enum class Direction { None, Up, Down, Left, Right };
 
