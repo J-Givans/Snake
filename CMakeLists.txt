@@ -20,6 +20,4 @@ find_package(SFML 2.5.1 REQUIRED
         sfml-graphics
 )
 
-add_executable(snake)
-
 add_subdirectory(src)

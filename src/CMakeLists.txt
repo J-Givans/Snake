@@ -1,3 +1,5 @@
+add_executable(snake)
+
 target_include_directories(snake PUBLIC "${PROJECT_SOURCE_DIR}/include")
 
 target_sources(snake
