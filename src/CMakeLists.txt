@@ -5,9 +5,9 @@ target_sources(snake
         main.cpp
         "${PROJECT_SOURCE_DIR}/include/Borders.hpp"
         "${PROJECT_SOURCE_DIR}/include/Common.hpp"
+        "${PROJECT_SOURCE_DIR}/include/Fruit.hpp"
     PRIVATE
         Common.cpp
-        Fruit.hpp
         Fruit.cpp
         Borders.cpp
         Snake.hpp
