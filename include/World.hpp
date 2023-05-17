@@ -14,7 +14,7 @@ namespace snake
     public:
         explicit World(sf::Vector2u const& winsize);
 
-        void update(snake::Snake& snake);
+        void update(Snake& snake);
 
     private:
         Borders m_borders;
