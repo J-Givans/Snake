@@ -7,13 +7,8 @@
 
 #include "Common.hpp"
 
-#include <random>
-
 namespace snake
 {
-    inline std::random_device rd;
-    inline std::mt19937 generator(rd());
-
     class Fruit
     {
     public:
