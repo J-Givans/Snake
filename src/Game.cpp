@@ -24,6 +24,7 @@ namespace snake
                 }
             }
 
+            setSnakeDirection();
             m_snake.tick();
 
             if (m_snake.getPosition() == m_world.getFruitPosition()) {
