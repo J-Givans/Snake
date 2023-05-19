@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "Common.hpp"
 
 #include <SFML/Window/Keyboard.hpp>
 
@@ -7,6 +8,7 @@ namespace snake
     Game::Game(sf::VideoMode mode, std::string title)
     :   m_window(std::move(mode), std::move(title))
     {
+        m_window.setFramerateLimit(BlockSize);
     }
 
     void Game::setSnakeDirection() &
