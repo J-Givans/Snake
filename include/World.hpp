@@ -25,9 +25,6 @@ namespace snake
         /// \brief Respawn the fruit
         void respawnFruit() &;
 
-        /// \brief Get the borders of the game world
-        std::array<sf::Vector2f, 4> getBorders() const& noexcept;
-
         /// \brief Get fruit position
         sf::Vector2i getFruitPosition() const&;
 

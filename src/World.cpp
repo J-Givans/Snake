@@ -20,11 +20,6 @@ namespace snake
         m_fruit.respawn();
     }
 
-    std::array<sf::Vector2f, 4> World::getBorders() const& noexcept
-    {
-        return m_borders.getBorderPositions();
-    }
-
     sf::Vector2i World::getFruitPosition() const&
     {
         return m_fruit.getPosition();
