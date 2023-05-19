@@ -30,6 +30,16 @@ namespace snake
         }
     }
 
+    std::array<sf::Vector2f, 4> Borders::getBorderPositions() const& noexcept
+    {
+        return std::array<sf::Vector2f, 4> {
+            m_borders[0].getPosition(),
+            m_borders[1].getPosition(),
+            m_borders[2].getPosition(),
+            m_borders[3].getPosition()
+        };
+    }
+
     void Borders::render(sf::RenderWindow& window) const
     {
         for (auto const& border : m_borders) {

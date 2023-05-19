@@ -19,6 +19,9 @@ namespace snake
         /// \param[in] winsize The size of the window to which the borders will be rendered
         explicit Borders(sf::Vector2u const& winsize);
 
+        /// \brief Get the borders positions
+        std::array<sf::Vector2f, 4> getBorderPositions() const& noexcept;
+
         /// \brief Render the borders to the screen
         /// \param[in] The window in which the borders will be rendered
         void render(sf::RenderWindow& window) const;
