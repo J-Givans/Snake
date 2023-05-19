@@ -11,8 +11,7 @@
 #include <vector>
 
 #include "Common.hpp"
-#include "Fruit.hpp"
-#include "Borders.hpp"
+#include "World.hpp"
 
 enum class Direction { None, Up, Down, Left, Right };
 
@@ -143,10 +142,9 @@ struct PlayerData
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(600, 400), "Classic Game Of Snake");
-    snake::Fruit fruit(window.getSize());
+    snake::World world(window.getSize());
     Snake snake;
     PlayerData data { .score = 10, .status = Status::Alive };
-    snake::Borders borders(window.getSize());
 
     window.setFramerateLimit(snake::BlockSize);
 
@@ -161,19 +159,18 @@ int main()
 
         snake.move();
 
-        if (snake.position.front() == fruit.getPosition()) {
+        if (snake.position.front() == world.getFruitPosition()) {
             snake.grow();
             data.score += 10;
-            fruit.respawn();
+            world.respawnFruit();
         }
 
         snake.handleSelfCollision();
 
         window.clear();
         
-        fruit.render(window);
         snake.render(window);
-        borders.render(window);
+        world.render(window);
 
         window.display();
     }
