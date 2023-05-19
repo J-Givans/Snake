@@ -7,13 +7,17 @@ find_package(SFML 2.5.1 REQUIRED
         sfml-graphics
 )
 
+find_package(Microsoft.GSL REQUIRED)
+
 target_include_directories(snake PUBLIC "${PROJECT_SOURCE_DIR}/include")
 
 target_link_libraries(snake
-    PRIVATE
+    PUBLIC
         sfml-system
         sfml-window
         sfml-graphics
+    PRIVATE
+        Microsoft.GSL::GSL
 )
 
 target_sources(snake
