@@ -15,6 +15,9 @@ namespace snake
         /// \param title The title of the console window
         Game(sf::VideoMode mode, std::string title);
 
+        /// \brief Main game loop
+        void run() &;
+
     private:
         sf::RenderWindow m_window;
         World m_world;
