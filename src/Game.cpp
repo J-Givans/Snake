@@ -10,6 +10,7 @@ namespace snake
     :   m_window(std::move(mode), std::move(title))
     {
         m_window.setFramerateLimit(BlockSize);
+        m_world = World(m_window.getSize());
     }
 
     void Game::run() &
