@@ -12,6 +12,9 @@ namespace snake
     class Borders
     {
     public:
+        /// Default constructor
+        Borders();
+
         /// \brief Constructor
         /// \param[in] winsize The size of the window to which the borders will be rendered
         explicit Borders(sf::Vector2u const& winsize);

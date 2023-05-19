@@ -3,11 +3,16 @@
 
 namespace snake
 {
-    Borders::Borders(sf::Vector2u const& winSize)
+    Borders::Borders()
+    {
+        for (auto& border : m_borders) {
+            border.setFillColor(sf::Color(150, 0, 0));
+        }
+    }
+
+    Borders::Borders(sf::Vector2u const& winSize) : Borders()
     {
         for (std::array<sf::RectangleShape, 4>::size_type i = 0; i < m_borders.size(); ++i) {
-            m_borders[i].setFillColor(sf::Color(150, 0, 0));
-
             if ((i + 1) % 2 != 0) {
                 m_borders[i].setSize(sf::Vector2f(static_cast<float>(winSize.x), snake::BlockSize));
             }
