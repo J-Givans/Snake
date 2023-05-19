@@ -19,6 +19,9 @@ namespace snake
         sf::RenderWindow m_window;
         World m_world;
         Snake m_snake;
+
+        /// \brief Set the direction of the snake in response to a valid key press
+        void setSnakeDirection() &;
     };
 };
 
