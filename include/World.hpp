@@ -10,6 +10,8 @@
 
 namespace snake
 {
+    /// \brief This class is a facade for the components of the game world.
+    /// It contains the classes Fruit and Borders, and the methods required to manipulate them therein
     class World
     {
     public:
