@@ -5,7 +5,7 @@
 
 namespace snake
 {
-    Fruit::Fruit() : m_position(), m_winsize()
+    Fruit::Fruit()
     {
         m_shape.setRadius(static_cast<float>(BlockSize) / 2);
         m_shape.setFillColor(sf::Color::Yellow);
