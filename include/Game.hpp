@@ -26,6 +26,9 @@ namespace snake
 
         /// \brief Set the direction of the snake in response to a valid key press
         void setSnakeDirection() &;
+
+        /// \brief Handle collisions between the snake and the game world
+        void handleSnakeBorderCollision() &;
     };
 };
 

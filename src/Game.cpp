@@ -32,6 +32,8 @@ namespace snake
                 m_world.respawnFruit();
             }
 
+            handleSnakeBorderCollision();
+
             m_window.clear();
             m_snake.render(m_window);
             m_world.render(m_window);
@@ -55,5 +57,15 @@ namespace snake
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) and direction != Direction::Right) {
             m_snake.setDirection(Direction::Right);
         }        
+    }
+
+    void Game::handleSnakeBorderCollision() &
+    {
+        sf::Vector2i worldSize = sf::Vector2i(m_window.getSize()) / BlockSize;
+        auto pos = m_snake.getPosition(); 
+
+        if (pos.x <= 0 or pos.y <= 0 or pos.x >= worldSize.x - 1 or pos.y >= worldSize.y - 1) {
+            m_snake.reset();
+        }
     }
 }
