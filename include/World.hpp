@@ -23,6 +23,9 @@ namespace snake
         /// \brief Respawn the fruit
         void respawnFruit() &;
 
+        /// \brief Get fruit position
+        sf::Vector2i getFruitPosition() const&;
+
     private:
         Borders m_borders;
         Fruit m_fruit;

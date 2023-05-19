@@ -19,4 +19,9 @@ namespace snake
     {
         m_fruit.respawn();
     }
+
+    sf::Vector2i World::getFruitPosition() const&
+    {
+        return m_fruit.getPosition();
+    }
 }
