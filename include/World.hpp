@@ -6,6 +6,7 @@
 #include "Fruit.hpp"
 
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 namespace snake
 {
@@ -13,6 +14,9 @@ namespace snake
     {
     public:
         explicit World(sf::Vector2u const& winsize);
+
+        /// \brief Render the game world to the console
+        void render(sf::RenderWindow& window) &;
 
     private:
         Borders m_borders;
