@@ -15,6 +15,8 @@ namespace snake
     class World
     {
     public:
+        World() = default;
+
         explicit World(sf::Vector2u const& winsize);
 
         /// \brief Render the game world to the console
