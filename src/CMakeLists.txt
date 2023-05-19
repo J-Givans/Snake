@@ -24,12 +24,14 @@ target_sources(snake
         "${PROJECT_SOURCE_DIR}/include/Fruit.hpp"
         "${PROJECT_SOURCE_DIR}/include/Snake.hpp"
         "${PROJECT_SOURCE_DIR}/include/World.hpp"
+        "${PROJECT_SOURCE_DIR}/include/Game.hpp"
     PRIVATE
         Common.cpp
         Fruit.cpp
         Borders.cpp
         Snake.cpp
         World.cpp
+        Game.cpp
 )
 
 target_compile_features(snake 
