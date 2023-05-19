@@ -5,10 +5,16 @@
 
 namespace snake
 {
-    Fruit::Fruit(sf::Vector2u const& winsize) : m_winsize { (winsize.x / BlockSize) - 2, (winsize.y / BlockSize) - 2 }
+    Fruit::Fruit() : m_position(), m_winsize()
     {
-        respawn();
+        m_shape.setRadius(static_cast<float>(BlockSize) / 2);
         m_shape.setFillColor(sf::Color::Yellow);
+    }
+
+    Fruit::Fruit(sf::Vector2u const& winsize) : Fruit()
+    {
+        m_winsize = { (winsize.x / BlockSize) - 2, (winsize.y / BlockSize) - 2 };
+        respawn();
     }
 
     void Fruit::render(sf::RenderWindow& window) const

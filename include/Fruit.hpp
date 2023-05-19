@@ -13,6 +13,9 @@ namespace snake
     {
     public:
         /// \brief Default constructor
+        Fruit();
+
+        /// \brief Default constructor
         /// \param[in] winsize The size of the window in which the Fruit will be rendered
         explicit Fruit(sf::Vector2u const& winsize);
 
@@ -29,7 +32,7 @@ namespace snake
 
     private:
         sf::Vector2i m_position;
-        sf::CircleShape m_shape { static_cast<float>(BlockSize) / 2 };
+        sf::CircleShape m_shape;
         sf::Vector2u m_winsize;
     };
 }
