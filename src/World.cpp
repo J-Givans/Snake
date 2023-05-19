@@ -14,4 +14,9 @@ namespace snake
         m_fruit.render(window);
         m_borders.render(window);
     }
+
+    void World::respawnFruit() &
+    {
+        m_fruit.respawn();
+    }
 }

@@ -20,6 +20,9 @@ namespace snake
         /// \brief Render the game world to the console
         void render(sf::RenderWindow& window) &;
 
+        /// \brief Respawn the fruit
+        void respawnFruit() &;
+
     private:
         Borders m_borders;
         Fruit m_fruit;
