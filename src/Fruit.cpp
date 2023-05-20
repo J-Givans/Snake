@@ -34,6 +34,9 @@ namespace snake
 
     void Fruit::respawn()
     {
+        static std::random_device rd;
+        static std::mt19937 generator(rd());
+
         m_position.x = (generator() % m_winsize.x) + 1;
         m_position.y = (generator() % m_winsize.y) + 1;
 
