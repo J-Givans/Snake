@@ -9,7 +9,7 @@ namespace snake
     {
     }
 
-    void World::render(sf::RenderWindow& window) &
+    void World::render(sf::RenderWindow& window) const&
     {
         m_fruit.render(window);
         m_borders.render(window);

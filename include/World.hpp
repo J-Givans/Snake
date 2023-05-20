@@ -20,7 +20,7 @@ namespace snake
         explicit World(sf::Vector2u const& winsize);
 
         /// \brief Render the game world to the console
-        void render(sf::RenderWindow& window) &;
+        void render(sf::RenderWindow& window) const&;
 
         /// \brief Respawn the fruit
         void respawnFruit() &;
