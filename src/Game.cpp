@@ -6,8 +6,8 @@
 
 namespace snake
 {
-    Game::Game(sf::VideoMode mode, std::string title)
-    :   m_window(std::move(mode), std::move(title))
+    Game::Game(sf::VideoMode const& mode, std::string const& title)
+    :   m_window(mode, title)
     {
         m_window.setFramerateLimit(BlockSize);
         m_world = World(m_window.getSize());

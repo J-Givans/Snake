@@ -14,7 +14,7 @@ namespace snake
         /// \brief Create a new game instance
         /// \param mode The video mode of the console window
         /// \param title The title of the console window
-        Game(sf::VideoMode mode, std::string title);
+        Game(sf::VideoMode const& mode, std::string const& title);
 
         /// \brief Main game loop
         void run() &;
