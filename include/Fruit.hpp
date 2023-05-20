@@ -27,6 +27,10 @@ namespace snake
         /// \returns The position of the fruit
         sf::Vector2i const& getPosition() const noexcept;
 
+        /// \brief Set the position of the fruit
+        /// \param[in] pos The new position of the fruit
+        void setPosition(sf::Vector2i const& pos) noexcept;
+
         /// \brief Change the position of the fruit in the window
         void respawn();
 

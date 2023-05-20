@@ -27,6 +27,11 @@ namespace snake
         return m_position;
     }
 
+    void Fruit::setPosition(sf::Vector2i const& pos) noexcept
+    {
+        m_shape.setPosition(sf::Vector2f(pos));
+    }
+
     void Fruit::respawn()
     {
         m_position.x = (generator() % m_winsize.x) + 1;
