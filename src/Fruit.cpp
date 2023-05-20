@@ -37,6 +37,6 @@ namespace snake
         m_position.x = (generator() % m_winsize.x) + 1;
         m_position.y = (generator() % m_winsize.y) + 1;
 
-        m_shape.setPosition(sf::Vector2f(m_position * BlockSize));
+        setPosition(m_position * BlockSize);
     }
 }
